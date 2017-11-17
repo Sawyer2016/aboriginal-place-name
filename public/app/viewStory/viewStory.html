@@ -1,0 +1,25 @@
+<div class="viewStory">
+	<div class="top-part">
+		<div class="navigation">
+			<a ui-sref="personalInfo">My Account/</a>
+			<a ui-sref="viewStory">View Stories/</a>
+		</div>
+		<div class="button">
+			<button ui-sref="addStory">ADD STORY</button>
+		</div>
+	</div>
+	<div class="storyInfo">
+		<table>
+			<tr class="title">
+				<td>Story Title</td>
+				<td>Aboriginal Name</td>
+				<td>Present Name</td>
+			</tr>
+			<tr ng-repeat="x in ctrl.stories">
+				<td align="left"><a ui-sref="story({ id: x.id })">{{x.story}}</a></td>
+				<td>{{x.abName}}</td>
+				<td>{{x.presentName}}</td>
+			</tr>
+		</table>
+	</div>
+</div>

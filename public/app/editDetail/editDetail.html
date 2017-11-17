@@ -1,0 +1,52 @@
+<div class="editDetail">
+	<div class="top-part">
+		<div class="navigation">
+			<a ui-sref="personalInfo">My Account/</a>
+			<a ui-sref="editDetail">Edit Detail/</a>
+		</div>
+	</div>
+	<form ng-submit="ctrl.update(ctrl.userInfo)">
+	<div class="UserInfo">
+		<table>
+			<tr>
+				<td>First Name</td>
+				<td><input type="" name=""  ng-model="ctrl.userInfo.firstname"></td>
+
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td><input type="" name=""  ng-model="ctrl.userInfo.lastname"></td>
+			</tr>
+			<tr>
+				<td>Email ID</td>
+				<td>{{ctrl.user.email}}</td>
+				<!-- <td><input type="email" ng-model="ctrl.user.email"></td> -->
+			</tr>
+			<tr ng-show="ctrl.type==='contributor'">
+				<td>Place Access</td>
+				<td>
+					<p ng-repeat="x in ctrl.contributorPlaces" >
+				    {{x.trad_aboriginal_name}}</p>
+				</td>
+			</tr>
+			<tr ng-show="ctrl.type==='contributor'">
+				<td>Language Groups</td>
+				<td><p ng-repeat="x in ctrl.contributorPlaces" >
+				    {{x.lang.lang}}</p></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><button ui-sref="forgetPsw">Change Password</button></td>
+			</tr>
+			<tr>
+				<td>Mobile Number</td>
+				<td><input type="" name=""  ng-model="ctrl.userInfo.contact"></td>
+			</tr>
+		</table>
+	</div>
+	<div class="bottom-buttons">
+		<button type="submit">Save</button>
+		<button type="reset">Reset</button>
+	</div>
+	</form>
+</div>

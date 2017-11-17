@@ -1,0 +1,190 @@
+.places {
+	width:100%;
+	height:80vh;
+	float:left;
+}
+
+.places .filterbox {
+  	float:left;
+	width:25%;
+	height:100%;
+}
+.places .filterbox .filter{
+	float:left;
+	width:100%;
+	height:85%;
+	background:#EBBD26;
+}
+
+.places .filterbox .filter .filterContent{
+	float:left;
+	width:90%;
+	height:100%;
+	padding-left: 10%;
+	padding-top: 10%;
+}
+
+.places .filterbox .filter .filterContent .condition-content{
+	
+	float:left;
+	width:50%;
+	
+}
+.places .filterbox .filter .filterContent .condition-content select{
+	width:80%;
+}
+.places .filterbox .filter .filterContent .condition{
+	width:100%;
+	height:5%;
+	font-weight:bold;
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+
+.places .filterbox .filter .filterContent .input-search{
+	width:90%;
+	height:5%;
+	position:relative;
+
+}
+.places .filterbox .filter .filterContent .input-search input{
+	padding-left: 15%;
+	width:80%;
+}
+.places .filterbox .filter .filterContent .input-search .search-map {
+	background-image:url(../../images/search.png);
+    position:absolute;
+    width:17px;
+    height:18px;
+    top:5%;
+    left:3px;
+    z-index:99;
+}
+
+.places .filterbox .filter .filterContent .textcss{ 
+	background-color: white;
+	overflow-y:scroll;
+	width:90%;
+	height:40%;
+
+} 
+
+.places .filterbox .filter .filterContent .textcss .place-css{
+	text-decoration:none;
+	color:black;
+}
+
+.places .placesList{
+	word-wrap:break-word;
+	float:left;
+	margin-left: 3%;
+	width:70%;
+	/*height:90%;*/
+
+}
+.places .pages{
+	float:left;
+	margin-left: 5%;
+	margin-top: 5%;
+	width:50%;
+	height:5%;
+	text-align:right;  
+}
+.places .placesList .placeInfo{
+	float:left;
+	width:100%;
+	height:33%;
+	margin-bottom: 3%;
+}
+
+.places .placesList .place-words{
+	float:left;
+	width:70%;
+	height:100%;
+}
+.places .placesList .place-img{
+	float:right;
+	width:25%;
+	height:100%;
+	margin-left: 3%;
+}
+.places .placesList .place-words .place-name{
+	float:left;
+	width:100%;
+	color:#DD6D26;
+	font:bold;
+	font-size: 200%;
+	height:25%;
+}
+.places .placesList .place-words .place-name a{
+	text-decoration: none;
+	color:#DD6D26;
+}
+.places .placesList .place-words .place-HistoricalName{
+	float:left;
+	color:#DD6D26;
+	width:100%;
+	height:10%;
+}
+
+.places .placesList .place-words .place-text{
+	float:left;
+	width:100%;
+	height:50%;
+}
+.places .placesList .place-words .read-more{
+	float:right;
+	width:100%;
+	height:10%;
+	
+}
+
+.places .placesList .place-words .read-more a{
+	text-decoration: none;
+	color:#DD6D26;
+}
+
+.places .pages ul.pagination{
+	display: inline-block;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.places .pages ul.pagination li {display: inline; }
+
+.places .pages ul.pagination li a{
+    float: left;
+    padding: 5px 5px;
+    text-decoration: none;
+    cursor: pointer;
+    color:black;
+}
+.places .pages ul.pagination li.active a{
+    float: left;
+    padding: 5px 5px;
+    text-decoration: none;
+    cursor: pointer;
+    color:#DD6D26;
+}
+
+.places .pages ul.pagination li a.default{
+    float: left;
+    padding: 5px 5px;
+    text-decoration: none;
+    cursor: pointer;
+    color:black;
+}
+
+.places .filter .filterContent .reset{
+	background:#EBBD26;
+	border:1px solid #DD6D26 ;
+	font-weight:bold;
+	float:left;
+	margin-left: 20%;
+	margin-top: 20%;
+	width:50%;
+	height:5%;
+	border-radius: 10px;
+	outline:none;
+}

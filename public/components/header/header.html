@@ -1,0 +1,25 @@
+<!--header-->
+<div class="headerSpace">
+	<div class="header-img">
+		<a ui-sref="home"><img src="/images/VACL.png" /></a>
+	</div>
+	<div class="header-right">		
+		<div class="header-buttons">
+			<button class="header-button" ui-sref="personalInfo">MY ACCOUNT</button>
+			<button id="login" class="header-button" ui-sref="login"  >LOGIN</button>
+			<button id="logout" class="header-button" ng-click="logout()" >LOGOUT</button>
+		</div>
+		
+	</div>
+</div>
+<!--navigation-->
+<div class="nav">
+    <ul>
+	   <li><a ui-sref="home" ui-sref-active="active" ui-sref-opts="{reload: true}" >Home</a></li>  
+	   <li><a ui-sref="map" ui-sref-active="active" ui-sref-opts="{reload: true}" >Aboriginal Map</a></li>  
+	   <li><a ui-sref="places" ui-sref-active="active" ui-sref-opts="{reload: true}" >Place Dictionary</a></li>
+	   <li><a ui-sref="aboutus" ui-sref-active="active" ui-sref-opts="{reload: true}" >About Us</a></li>
+	   <li><a ui-sref="contactUs" ui-sref-active="active" ui-sref-opts="{reload: true}">Contact Us</a></li>
+ 	</ul>
+</div>
+

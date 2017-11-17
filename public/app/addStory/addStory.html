@@ -1,0 +1,31 @@
+<div class="addStory">
+	<div class="top-part">
+		<div class="navigation">
+			<a ui-sref="personalInfo">My Account/</a>
+			<a ui-sref="viewStory">View My Stories/</a>
+			<a ui-sref="addStory">Add Story/</a>
+		</div>
+	</div>
+	<h3>Add Story</h3>
+	<form ng-submit="ctrl.update(ctrl.story)">
+	<div class="line">
+		<div class="text">Aboriginal Name:</div>	
+		<select ng-model="ctrl.story.abPlace">
+			<option ng-repeat="x in ctrl.abPlaces" value="{{x.id}}">{{x.trad_aboriginal_name}}</option>
+		</select>
+	</div>
+	<div class="line">
+		<div class="text">Story Title:</div>
+		<input ng-model="ctrl.story.title">
+	</div>
+	<div class="line">
+		<div class="text">text:</div>
+		<textarea class="story-text" ng-model="ctrl.story.text"></textarea>
+	</div>
+    
+	<div class="bottom-buttons">
+		<button type="submit">Save</button>
+		<button type="reset">Reset</button>
+	</div>
+	</form>
+</div>

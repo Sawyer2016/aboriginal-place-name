@@ -1,0 +1,66 @@
+<div class="addUser">
+	<div class="top-part">
+		<div class="navigation">
+			<a ui-sref="personalInfo">My Account/</a>
+			<a ui-sref="manageUser">Manage User/</a>
+			<a ui-sref="addUser">Add User/</a>
+		</div>
+		<!-- <div class="button">
+			<button >Delete Account</button>
+			<button >Deactivate Account</button>
+		</div> -->
+	</div>
+	<form ng-submit="ctrl.add(ctrl.newUser)">
+	<div class="UserInfo">
+		<table>
+			<tr>
+				<td>First Name</td>
+				<td><input type="" name="" ng-model="ctrl.newUser.firstname"></td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td><input type="" name="" ng-model="ctrl.newUser.lastname"></td>
+			</tr>
+			<tr>
+				<td>Email ID</td>
+				<td><input ng-model="ctrl.newUser.email" type="" name=""></td>
+			</tr>
+			<tr>
+				<td>Role</td>
+				<td>
+					<select ng-model="ctrl.newUser.role" ng-change="ctrl.changeRole()">
+						<option value="admin">Admin</option>
+						<option value="public">Public</option>
+						<option value="contributor">Contributor</option>
+					</select>
+				</td>
+			</tr>
+			<tr ng-show="ctrl.ifContributor===true">
+				<td>place Access</td>
+				<td>
+				<isteven-multi-select    
+				    input-model="ctrl.places"    
+				    output-model="ctrl.newUser.accessPlace"
+				    button-label="trad_aboriginal_name"
+				    item-label="trad_aboriginal_name maker"
+				    tick-property="ticked"
+				>
+				</isteven-multi-select>
+				</td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input ng-model="ctrl.newUser.password" type="password" name=""></td>
+			</tr>
+			<tr>
+				<td>Mobile Number</td>
+				<td><input type="" name="" ng-model="ctrl.newUser.contact"></td>
+			</tr>
+		</table>
+	</div>
+	<div class="bottom-buttons">
+		<button type="submit">Save</button>
+		<button type="reset">Reset</button>
+	</div>
+	</form>
+</div>

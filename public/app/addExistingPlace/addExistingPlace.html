@@ -1,0 +1,29 @@
+<div class="addExistingPlace">
+	<div class="top-part">
+		<div class="navigation">
+			<a ui-sref="personalInfo">My Account/</a>
+			<a ui-sref="manageExistingPlace">Manage ExistingPlace/</a>
+			<a ui-sref="addExistingPlace">Add Place/</a>
+		</div>
+	</div>
+	<h3>Add ExistingPlace</h3>
+	<form ng-submit="ctrl.add(ctrl.ExistingPlace)">
+	<div class="line">
+		<div class="text">Place Name</div>
+		<div class="input"><input type="" name="" ng-model="ctrl.ExistingPlace.name"></div>		
+	</div>
+	<div class="line">
+		<div class="text">Municipality</div>
+		<div class="input">
+			<select ng-model="ctrl.ExistingPlace.municipality">
+				<option ng-repeat="x in ctrl.municipalities" value="{{x}}">{{x}}</option>
+			</select>
+		</div>	
+				
+	</div>
+	<div class="bottom-buttons">
+		<button type="submit">Save</button>
+		<button type="reset">Reset</button>
+	</div>
+	</form>
+</div>

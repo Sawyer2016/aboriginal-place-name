@@ -1,0 +1,42 @@
+<div class="manageLang">
+	<div class="top-part">
+		<div class="navigation">
+			<a ui-sref="personalInfo">My Account/</a>
+			<a ui-sref="manageLang">Manage Languages/</a>
+		</div>
+		<div class="button">
+			<button ui-sref="addLang">Add Lang</button>
+		</div>
+	</div>
+	<div class="LangInfo">
+		<table>
+			<tr class="title">
+				<td>Language Name</td>
+				<td>Notes</td>
+			</tr>
+			<tr class="content" ng-repeat="x in ctrl.items">
+				<td><a ui-sref="editLang({ id: x.id })">{{x.lang}}</a></td>
+				<td>{{x.notes}}</td>
+			</tr>
+		</table>
+	</div>
+	<div class="pages">
+	  <ul ng-if="ctrl.pager.pages.length" class="pagination">
+	      <li ng-class="{disabled:ctrl.pager.currentPage === 1}">
+	          <a  ng-click="ctrl.setPage(1)"><<</a>
+	      </li>
+	      <li ng-class="{disabled:ctrl.pager.currentPage === 1}">
+	          <a ng-click="ctrl.setPage(ctrl.pager.currentPage - 1)"><</a>
+	      </li>
+	      <li ng-repeat="page in ctrl.pager.pages" ng-class="{active:ctrl.pager.currentPage === page}">
+	          <a id="{{page}}"   ng-click="ctrl.setPage(page)" >{{page}}</a>
+	      </li>
+	      <li ng-class="{disabled:ctrl.pager.currentPage === ctrl.pager.totalPages}">
+	          <a  ng-click="ctrl.setPage(ctrl.pager.currentPage + 1)">></a>
+	      </li>
+	      <li ng-class="{disabled:ctrl.pager.currentPage === ctrl.pager.totalPages}">
+	          <a  ng-click="ctrl.setPage(ctrl.pager.totalPages)">>></a>
+	      </li>
+	  </ul>
+	</div>
+</div>

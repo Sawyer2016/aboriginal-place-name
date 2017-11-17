@@ -1,0 +1,80 @@
+<div class="editPlace">
+	<div class="top-part">
+		<div class="navigation">
+			<a ui-sref="personalInfo">My Account/</a>
+			<a ui-sref="managePlace">Manage Places/</a>
+			<a ui-sref="editPlace">Edit Place/</a>
+		</div>
+	</div>
+	<h3>Edit place</h3>
+	<form >
+	<div class="line">
+		<div class="text">Aboriginal Name:</div>
+		<div class="input"><input type="" name="" ng-model="ctrl.place.trad_aboriginal_name"></div>		
+	</div>
+	<div class="line">
+		<div class="text">Prensent Name:</div>
+		<div class="input">
+		<select  ng-model="ctrl.place.present_day_place_id"	ng-options="x.id as x.name for x in ctrl.presentPlaces">
+		</select>
+		</div>		
+	</div>
+	<div class="line">
+		<div class="text">Meaning:</div>
+		<div class="input"><input type="" name="" ng-model="ctrl.place.meaning"></div>		
+	</div>
+	<div class="line">
+		<div class="text">Language of Origin:</div>
+		<div class="input">
+		<select ng-model="ctrl.place.lang_id">
+			<option ng-repeat="x in ctrl.langs" value="{{x.id}}">
+				{{x.lang}}
+			</option>
+		</select>
+		</div>		
+	</div>
+	<div class="line">
+		<div class="text">Place Information:</div>
+		<div class="input"><textarea class="place-text" ng-model="ctrl.place.information"></textarea></div>		
+	</div>
+	<div class="line">
+		<div class="text">Place History:</div>
+		<div class="input"><textarea class="place-text" ng-model="ctrl.place.history"></textarea></textarea></div>		
+	</div>
+	<div class="line">
+		<div class="text">Community Links:</div>
+		<div class="input"><textarea class="place-text" ng-model="ctrl.place.community"></textarea></textarea></div>		
+	</div>
+	<div class="line">
+		<div class="text">Longitude:</div>
+		<div class="input"><input type="" name="" ng-model="ctrl.place.geopoint.lng"></div>		
+	</div>
+    <div class="line">
+		<div class="text">Latitude:</div>
+		<div class="input"><input type="" name="" ng-model="ctrl.place.geopoint.lat"></div>		
+	</div>
+	<div class="line" ng-repeat="x in ctrl.assetsList">
+		<div class="asset">{{x.id}}</div>
+		<div class="asset">{{x.type}}</div>
+		<div class="asset">
+			<a ng-click="ctrl.deleteAsset(x.id)">delete</a>
+		</div>
+	</div>
+	<div class="line">
+	<div ng-if="ctrl.uploadState === 'ready'">
+	<input type="file" name="file" onchange="angular.element(this).scope().fileSelected(this.files)"/>
+	<button type="button" ng-disabled="!ctrl.canUpload()" ng-click="ctrl.uploadAsset()">Upload </button>
+	</div>
+	<div ng-if="ctrl.uploadState === 'uploading'">
+		Uploading, please wait...
+	</div>
+	<div ng-if="ctrl.uploadState === 'done'">
+		Upload complete! Click <a href ng-click="ctrl.resetUploadForm()">here</a> to upload another file.
+	</div>
+	</div>
+	<div class="bottom-buttons">
+		<button ng-click="ctrl.update(ctrl.place)">Save</button>
+		<button ng-click="ctrl.delete()">Delete Place</button>
+	</div>
+	</form>
+</div>

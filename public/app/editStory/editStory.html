@@ -1,0 +1,30 @@
+<div class="editStory">
+	<div class="top-part">
+		<div class="navigation">
+			<a ui-sref="personalInfo">My Account/</a>
+			<a ui-sref="viewStory">View My Stories/</a>
+			<a ui-sref="editStory">edit Story/</a>
+		</div>
+	</div>
+	<h3>Edit Story</h3>
+	<form>
+	<div class="line">
+		<div class="text">Aboriginal Name:</div>	
+		<select ng-model="ctrl.story.aboriginal_place_id">
+			<option ng-repeat="x in ctrl.abPlaces"  value="{{x.id}}">{{x.trad_aboriginal_name}}</option>
+		</select>
+	</div>
+	<div class="line">
+		<div class="text">Story Title:</div>
+		<input ng-model="ctrl.story.title" >
+	</div>
+    <div class="line">
+		<div class="text">text:</div>
+		<textarea class="story-text" ng-model="ctrl.story.text"></textarea>
+	</div>
+	<div class="bottom-buttons">
+		<button ng-click="ctrl.update(ctrl.story)">Save</button>
+		<button ng-click="ctrl.delete()">Delete</button>
+	</div>
+	</form>
+</div>

@@ -1,0 +1,115 @@
+<div class="mapFilter">
+	<!-- filter -->
+	<div class="filter" >
+
+		<div class="filterContent">
+			<div class="input-search">
+				<input autocomplete="off" list="suggestionList" ng-model-options='{ debounce: 300 }' ng-change="ctrl.changeDataList()" type="text" ng-model="placeToSearch" ng-keyup="ctrl.mykey($event)"/>
+				<datalist id="suggestionList">
+					<option data-ng-repeat="x in ctrl.suggestionlist" value="{{x.trad_aboriginal_name}}">
+				</datalist>
+				<a href="#" ng-click="ctrl.searchPlaceByName()">
+				<div  class="search-map"></div></a>
+			</div>
+			<div class="condition">
+			<div class="condition-content">Municipality</div>
+			<div class="condition-content">
+			<select ng-model="municipality" ng-change="ctrl.filterPlaces()">
+				<option value="All" >All</option>
+				<option ng-repeat="x in ctrl.municipalities" value="{{x}}">{{x}}</option>
+			</select>
+			</div>
+			</div>
+			<div class="condition">
+			<div class="condition-content">Starts With</div>
+			<div class="condition-content">
+				<select ng-model="startsWith"   ng-change="ctrl.filterPlaces()" >
+					<option value="All" >All</option>
+					<option ng-repeat="x in ctrl.alphabets" value="{{x}}">{{x}}</option>
+				</select>
+			</div>
+			</div>
+			<div class="condition">
+			<div class="condition-content">Language</div>
+			<div class="condition-content">
+				<select  ng-model="languages"  ng-change="ctrl.filterPlaces()"   >
+					<option value="All" >All</option>
+					<option  ng-repeat=" x in ctrl.langs" value="{{x.id}}" >{{x.lang}} </option>
+				</select>
+			</div>
+			</div>
+			<div class="textcss">
+				<p ng-repeat="x in ctrl.places track by $index" >
+				<a  href="#">{{x.trad_aboriginal_name}}</a></p>
+
+			</div>
+				<button class="reset" ng-click="ctrl.Reset()">Reset</button>
+		</div>
+	</div>
+	<!--google map -->
+	<div id="map"></div>
+</div>
+
+
+<!-- pop up -->
+<div id="myModal" class="reveal-modal" >
+
+			<div id="content" class="pop-up" ng-app="app" >
+	            <h1 class='pop-up-title'><a ui-sref="place({ id: ctrl.placeInfo.id })">{{ctrl.placeInfo.trad_aboriginal_name}}</a></h1>
+	            <div class="set-center" >
+	            	Historically Known As
+	            <span class='set-color'>
+	            	{{ctrl.placeInfo.present_day_place.name}}</span>
+	            </div>
+	            <p >Meaning of the Name -
+		            <span >
+		            	{{ctrl.placeInfo.meaning}}
+		            </span>
+	            </p>
+	            <p>Language of Origin - {{ctrl.placeInfo.lang.lang}}</p>
+	            <div ng-if="ctrl.placeAudioURL">
+	            <p class="set-color">Audio</p>
+	            <div id="audio" >
+	                <a ng-href="#" ng-click="ctrl.goPlay()"> <img  id="audioImg" class="audio-img" src="../../images/audio.png" /></a>
+	                <audio id="myAudio" ng-src={{ctrl.placeAudioURL}}></audio>
+	                 This audio clip translates to {{ctrl.placeInfo.meaning}} in English.
+	             </div>
+	             </div>
+	            <div ng-if="ctrl.placeVideoURL">
+	            <p class="set-color">Video</p>
+	            <div class="videoCss" >
+					 <video id="myVideo" ng-src={{ctrl.placeVideoURL}} controls="controls">
+					your browser does not support the video tag
+			    </video>
+	            </div>
+	            </div>
+	            <div ng-if="ctrl.placeImgURL">
+	            <p class="set-color">Image</p>
+	            <div class="imgs" >
+	                <img  ng-src={{ctrl.placeImgURL}} />
+	            </div>
+	            </div>
+	             <br>
+	            <div class="history" ng-if="ctrl.placeInfo.present_day_place.history">
+	              <p class="set-color">History of the Place Name</p>
+	              <p>{{ctrl.placeInfo.present_day_place.history}}</p>
+	            </div>
+	            <div id="community" ng-if="ctrl.placeInfo.community">
+	              <p class="set-color">Community Links</p>
+	              <p >{{ctrl.placeInfo.community}}</p>
+	            </div>
+
+	              <div id="stories" >
+	              <p class="set-color">Stories</p>
+	              <div ng-repeat="x in ctrl.placeInfo.stories">
+	                <div class="story-num">{{x.title|limitTo:10 }}{{x.title.length>10?"...":""}}</div>
+	                <div class="story-intro">{{x.text|limitTo:15 }}{{x.text.length>15?"...":""}}</div>
+	                <div class="story-more">
+	                <a ui-sref="story({ id: x.id })">Read More</a>
+	                </div>
+	              </div>
+	              </div>
+	             </div>
+
+
+</div>

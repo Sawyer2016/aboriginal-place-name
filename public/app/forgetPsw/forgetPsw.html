@@ -1,0 +1,44 @@
+<div class="forgetPsw">
+	<div class="header">
+		<a ui-sref="home"><img src="/images/VACL.png" /></a>
+	</div>
+	<div ng-if="ctrl.state === 'notsent'">
+		<div class="content">
+			<p>If you need help resetting your password, we can help by sending you a link to reset it.</p>
+			<p>1. Enter elther the account related email address in the field below.</p>
+			<p>2. Press Recover Password</p>
+			<p>3. Check your inbox for a password reset email</p>
+			<p>4. Click on the URL provided in the email and enter a new password</p>
+		</div>
+		<div class="email">
+			Email: <input type="email" ng-model="ctrl.user.email">
+		</div>
+		<div class="button-container">
+			<button href ng-click="ctrl.send()" ng-disabled="!ctrl.canSend()">
+				Send reset password email
+			</button>
+		</div>
+	</div>
+	<div ng-if="ctrl.state === 'sent'" class="content">
+		<P>If your account exists, you will receive an email in your account with password reset details. Click here to login. Click <a ui-sref="login">here</a> to log in.</P>
+	</div>
+	<div class="footer">
+	  <div class="first-line">
+	    <a href="" ng-click="ctrl.shareToTwitter()"><img class="twitter" src="../../images/twitter.png"></a>
+	    <a href="" ng-click="ctrl.shareToInstagram()"><img class="instagram" src="../../images/instagram.png"></a>
+		<a href="" ng-click="ctrl.shareToFacebook()"><img class="facebook" src="../../images/facebook.png"></a>   
+	    <a href="" ng-click="ctrl.shareToVimeo()"><img class="vimeo" src="../../images/vimeo.png"></a>
+	    <a href="" ng-click="ctrl.shareToSoundCloud()"><img class="soundCloud" src="../../images/soundCloud.png"></a>
+	    <a href="" ng-click="ctrl.shareToAndroid()"><img class="android" src="../../images/android.png"></a>
+	    <a href="" ng-click="ctrl.shareToIOS()"><img class="ios" src="../../images/ios.png"></a>
+		<div class="footer-title">VACL</div>
+	  </div>
+	  <div class="text">70 Hanover Street, Fitzroy VIC 3065</div>
+	  <div class="text">phone:03 96003811</div>
+	  <div class="text">Email:info@vaclang.com</div>
+	  <div class="text">www.vaclang.com.au</div>
+	</div>
+	<div class="footer-copyright">
+	  Copyright © 2017 Victorian Aboriginal Corporation for Languages
+	</div>
+</div>

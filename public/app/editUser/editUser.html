@@ -1,0 +1,57 @@
+<div class="editUser">
+	<div class="top-part">
+		<div class="navigation">
+			<a ui-sref="manageUser">Manage User/</a>
+			<a ui-sref="editUser">Edit User/</a>
+		</div>
+	</div>
+	<form ng-submit="ctrl.update(ctrl.userInfo)">
+	<div class="UserInfo">
+		<table>
+			<tr>
+				<td>First Name</td>
+				<td><input type="" name=""  ng-model="ctrl.userInfo.firstname"></td>
+
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td><input type="" name=""  ng-model="ctrl.userInfo.lastname"></td>
+			</tr>
+			<tr>
+				<td>Email ID</td>
+				<td>{{ctrl.user.email}}</td>				
+			</tr>
+			<tr>
+				<td>Role</td>
+				<td>
+					<select ng-model="ctrl.userInfo.role" ng-click="ctrl.changeRole()">
+						<option value="admin">Admin</option>
+						<option value="public">Public</option>
+						<option value="contributor">Contributor</option>
+					</select>
+				</td>
+			</tr>
+			<tr ng-show="ctrl.ifContributor===true">
+				<td>place Access</td>
+				<td>
+				  <select ng-model="ctrl.userInfo.accessPlace">
+				  	<option ng-repeat="x in ctrl.places" value="{{x.id}}">{{x.trad_aboriginal_name}}</option>
+				  </select>
+				</td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><button ui-sref="forgetPsw">Change Password</button></td>
+			</tr>
+			<tr>
+				<td>Mobile Number</td>
+				<td><input type="" name=""  ng-model="ctrl.userInfo.contact"></td>
+			</tr>
+		</table>
+	</div>
+	<div class="bottom-buttons">
+		<button type="submit">Save</button>
+		<button type="reset">Reset</button>
+	</div>
+	</form>
+</div>

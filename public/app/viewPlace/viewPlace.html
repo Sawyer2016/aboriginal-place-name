@@ -1,0 +1,22 @@
+<div class="viewPlace">
+	<div class="top-part">
+		<div class="navigation">
+			<a ui-sref="personalInfo">My Account/</a>
+			<a ui-sref="viewPlace">View My Place/</a>
+		</div>
+	</div>
+	<div class="placeInfo">
+		<table>
+			<tr class="title">
+				<td>Aboriginal Name</td>
+				<td>Present Name</td>
+				<td>Municipality/Suburb</td>
+			</tr>
+			<tr ng-repeat="x in ctrl.places">
+				<td><a ui-sref="place({ id: x.id })">{{x.trad_aboriginal_name}}</a></td>
+				<td>{{x.present_day_place.name}}</td>
+				<td>{{x.municipality}}</td>
+			</tr>
+		</table>
+	</div>
+</div>

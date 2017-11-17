@@ -1,0 +1,88 @@
+.story {
+	width:100%;
+	float:left;
+}
+.story .top {
+	width:100%;
+	float:left;
+}
+.story .top .story-title{
+	float:left;
+	color:#DD6D26;
+	text-align: left;
+	font-size: 200%;
+	width:80%;
+}
+.story .top img{
+	float:right;
+	width:5%;
+	height:5%;
+}
+.story .top .button{
+	width:20%;
+	float:left;
+}
+.story .top .button button{
+	background:#F4DA9D;
+	border:3px solid #DD6D26 ;
+	font-weight:bold;
+	float:right;
+	width:80%;
+	cursor: pointer;
+}
+.story .left{
+	width:75%;
+	float:left;
+}
+.story .right{
+	width:20%;
+	float:right;
+}
+.story .right .img-container{
+	width:100%;
+	float:left;
+	margin-bottom: 1%;
+}
+.story .left .story-text{
+	width:100%;
+	float:left;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.story .left .theme{
+	width:100%;
+	float:left;
+	font-weight:bold;
+	color:#DD6D26;
+	margin-top: 2%;
+}
+.story .left .video-container{
+	width:100%;
+	float:left;
+}
+.story .left .video-container video{
+	width:50%;
+	float:left;
+}
+
+.story .left .audio-container{
+	width:100%;
+	float:left;
+}
+
+.story .share-buttons{
+	float:left;
+	width:100%;	
+	margin-top: 5%;
+}
+.story .share-buttons .facebook{
+	 height:5%;
+	  width:5%;
+	  float:right;
+}
+.story .share-buttons .twitter{
+	 height:5%;
+	  width:5%;
+	  float:right;
+}

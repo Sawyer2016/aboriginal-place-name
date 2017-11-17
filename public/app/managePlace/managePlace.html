@@ -1,0 +1,44 @@
+<div class="managePlace">
+	<div class="top-part">
+		<div class="navigation">
+			<a ui-sref="personalInfo">My Account/</a>
+			<a ui-sref="managePlace">Manage Place/</a>
+		</div>
+		<div class="button">
+			<button ui-sref="addPlace">Add Place</button>
+		</div>
+	</div>
+	<div class="PlaceInfo">
+		<table>
+			<tr class="title">
+				<td>Place Name</td>
+				<td>Historical Name</td>
+				<td>Municipality</td>
+			</tr>
+			<tr class="content" ng-repeat="x in ctrl.items">
+				<td><a ui-sref="place({ id: x.id })">{{x.trad_aboriginal_name}}</a></td>
+				<td>{{x.present_day_place.name}}</td>
+				<td>{{x.municipality}}</td>
+			</tr>
+		</table>
+	</div>
+	<div class="pages">
+	  <ul ng-if="ctrl.pager.pages.length" class="pagination">
+	      <li ng-class="{disabled:ctrl.pager.currentPage === 1}">
+	          <a  ng-click="ctrl.setPage(1)"><<</a>
+	      </li>
+	      <li ng-class="{disabled:ctrl.pager.currentPage === 1}">
+	          <a ng-click="ctrl.setPage(ctrl.pager.currentPage - 1)"><</a>
+	      </li>
+	      <li ng-repeat="page in ctrl.pager.pages" ng-class="{active:ctrl.pager.currentPage === page}">
+	          <a id="{{page}}"   ng-click="ctrl.setPage(page)" >{{page}}</a>
+	      </li>
+	      <li ng-class="{disabled:ctrl.pager.currentPage === ctrl.pager.totalPages}">
+	          <a  ng-click="ctrl.setPage(ctrl.pager.currentPage + 1)">></a>
+	      </li>
+	      <li ng-class="{disabled:ctrl.pager.currentPage === ctrl.pager.totalPages}">
+	          <a  ng-click="ctrl.setPage(ctrl.pager.totalPages)">>></a>
+	      </li>
+	  </ul>
+	</div>
+</div>

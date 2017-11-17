@@ -1,0 +1,107 @@
+.forgetPsw{
+	width:100%;
+	float:left; 
+}
+.forgetPsw .content{
+	padding-left: 20%;
+	width:60%;
+	float:left;
+
+}
+.forgetPsw .email{
+	padding-left: 20%;
+	width:80%;
+	float:left;
+}
+.forgetPsw .email input{
+	padding-left: 0;
+	border:2px solid #DD6D26
+}
+.forgetPsw .button-container{
+	padding-top:3%;
+	width:20%;
+	padding-left: 20%;
+	float:left;
+}
+.forgetPsw .button-container button{
+	float:left;
+}
+.forgetPsw .button-container a{
+	color:#DD6D26;
+	text-decoration:none;
+	float:left;
+}
+.forgetPsw .header{
+	width:100%;
+	float:left;
+	margin-bottom: 10%;
+}
+.forgetPsw .header img{
+	width:60%;
+}
+
+.forgetPsw .footer {
+  text-align: right;
+  width: 80%;
+  height: 20%;
+  background: #EBBD26;
+  margin-top: 10%;
+  margin-left: 10%;	
+  float:left;
+}
+.forgetPsw .footer .first-line{
+  width:100%;
+  padding-top: 1%;
+}
+.forgetPsw .footer .footer-title {
+  font-weight: bold;
+   padding-right: 1%;
+  padding-top:1%;
+}
+
+.forgetPsw .footer-copyright {
+  float:left;
+  width: 100%;
+  height: 2%;
+  text-align: center;
+}
+
+.forgetPsw .footer .first-line .facebook{
+  height:3%;
+  width:3%;
+  float:left;
+}
+.forgetPsw .footer .first-line .twitter{
+  height:5%;
+  width:5%;
+  float:left;
+}
+.forgetPsw .footer .first-line .android{
+  height:3.5%;
+  width:3.5%;
+  float:left;
+}
+.forgetPsw .footer .first-line .ios{
+  height:6%;
+  width:6%;
+  float:left;
+}
+.forgetPsw .footer .first-line .instagram{
+  height:4%;
+  width:4%;
+  float:left;
+}
+.forgetPsw .footer .first-line .soundCloud{
+  height:5%;
+  width:5%;
+  float:left;
+}
+.forgetPsw .footer .first-line .vimeo{
+  height:4%;
+  width:4%;
+  float:left;
+}
+.forgetPsw .footer .text{
+  padding-right: 1%;
+  margin-bottom: 1%;
+}

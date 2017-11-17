@@ -1,0 +1,61 @@
+.editPlace{
+	width:100%;
+	float:left; 
+}
+.editPlace .top-part{
+	width:100%;
+	height:5%;
+	float:left;
+}
+.editPlace .top-part .navigation{
+	width:100%;
+	float:left;
+}
+
+.editPlace .top-part .navigation a{
+	text-decoration: none;
+	color:#DD6D26;
+	font-size: 80%;
+
+}
+.editPlace .line{
+	width:100%;
+	float:left;
+	margin-bottom: 2%;
+}
+.editPlace .line .asset{
+	width:25%;
+	margin-left: 2%;
+	float:left;
+}
+.editPlace .line .asset a{
+	text-decoration: none;
+	color:#DD6D26;
+	cursor:pointer;
+}
+.editPlace .line .text {
+	width:20%;
+	float:left;
+}
+.editPlace .line .input {
+	width:80%;
+	float:left;
+}
+.editPlace .line .input textarea{
+	width:60%;
+	height:20vh;
+	float:left;
+}
+.editPlace .bottom-buttons{
+	width:100%;
+	margin-top: 5%;
+	float:left;
+}
+.editPlace .bottom-buttons button{
+	background:#F4DA9D;
+	border:3px solid #DD6D26 ;
+	font-weight:bold;
+	width:15%;
+	cursor: pointer;
+	margin-left: 20%;
+}

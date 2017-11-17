@@ -1,0 +1,23 @@
+.introduction {
+	font-weight: bold;
+}
+
+.form {
+	margin-left: 4%;
+}
+
+.uploadFile{
+	border:none
+}
+.buttons {
+	width:60%;
+	float:left;
+	padding-left: 30%;
+	margin-top: 2%;
+}
+
+.buttons button{
+	background:#EBBD26;
+	width:20%;
+	
+}

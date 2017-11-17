@@ -1,0 +1,24 @@
+<div class="editLang">
+	<div class="top-part">
+		<div class="navigation">
+			<a ui-sref="personalInfo">My Account/</a>
+			<a ui-sref="manageLang">Manage Langs/</a>
+			<a ui-sref="editLang">edit Lang/</a>
+		</div>
+	</div>
+	<h3>Edit Lang</h3>
+	<form >
+	<div class="line">
+		<div class="text">Language Name:</div>
+		<div class="input"><input type="" name="" ng-model="ctrl.Lang.lang"></div>		
+	</div>
+	<div class="line">
+		<div class="text">Notes:</div>
+		<div class="input"><textarea class="Lang-text" ng-model="ctrl.Lang.notes"></textarea></div>		
+	</div>
+	<div class="bottom-buttons">
+		<button ng-click="ctrl.update(ctrl.Lang)">Save</button>
+		<button ng-click="ctrl.delete()">Delete</button>
+	</div>
+	</form>
+</div>

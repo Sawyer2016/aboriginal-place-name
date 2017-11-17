@@ -1,0 +1,41 @@
+<div class="story">
+<div class="top">
+    <div class="story-title">{{ctrl.story.title}}</div>
+    <img  ng-show="ctrl.ifFav===false" ng-click="ctrl.setFav()" src="../../images/star1.png">
+    <img  ng-show="ctrl.ifFav===true" ng-click="ctrl.setFav()" src="../../images/star2.png">
+    <div ng-show="ctrl.ifContributor" class="button">
+    	<button ui-sref="editStory({id:ctrl.story.id})">EDIT</button>
+    </div>
+</div>  
+<div class="left">
+    <div class="story-text">{{ctrl.story.text}}</div>
+    <div ng-if="ctrl.videoURLs.length">
+    <div class="theme">
+    	Video
+    </div>
+    <div class="video-container" ng-repeat="x in ctrl.videoURLs">
+    	<video  ng-src={{x}} controls="controls">
+				your browser does not support the video tag
+		</video>
+    </div>
+    </div>
+    <div ng-if="ctrl.audioURLs.length">
+    <div class="theme">
+    	Audio
+    </div>
+    <div class="Audio-container" ng-repeat="x in ctrl.audioURLs">
+    	<audio ng-src={{x}} controls="controls"></audio>
+    </div>
+    </div>
+</div>
+<div class="right" >
+	<div class="img-container" ng-repeat="x in ctrl.imgURLs">
+		<img ng-src={{x}}>
+	</div>
+</div>
+    <div class="share-buttons">
+  
+     <a href="" ng-click="ctrl.shareToFacebook()"><img class="facebook" src="../../images/facebook2.png"></a>
+    <a href="" ng-click="ctrl.shareToTwitter()"><img class="twitter" src="../../images/twitter2.png"></a>
+  </div>
+</div>

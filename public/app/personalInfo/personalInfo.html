@@ -1,0 +1,37 @@
+<div class="personalInfo">
+	<div class="left-part">
+		<div class="navigation">
+			<a ui-sref="personalInfo">My Account/</a>
+		</div>
+		<div class="detail-container">
+			<div class="title">Personal Details</div>
+			<div class="detail">
+				<table>
+					<tr>
+						<td>Email:</td>
+						<td>{{ctrl.userInfo.email}}</td>
+					</tr>
+					<tr>
+						<td>Contact:</td>
+						<td>{{ctrl.userInfo.contact}}</td>
+					</tr>
+					
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="right-part">
+		<div class="button-container">
+			<p>MANAGE</p>
+		</div>
+		<div class="button-container" ng-show="ctrl.type==='contributor'"><button ui-sref="viewPlace" >VIEW MY PLACES</button></div>
+		<div class="button-container" ng-show="ctrl.type==='admin'"><button ui-sref="manageUser">USERS</button></div>
+		<div class="button-container" ng-show="ctrl.type==='admin'"><button ui-sref="managePlace">ABORIGINAL PLACES</button></div>
+		<div class="button-container" ng-show="ctrl.type==='admin'"><button ui-sref="manageExistingPlace">EXISTING PLACES</button></div>
+		<div class="button-container" ng-show="ctrl.type==='admin'"><button ui-sref="manageLang">LANGUAGES</button></div>
+		<div class="button-container" ng-show="ctrl.type==='contributor'"><button ui-sref="viewStory">VIEW MY STORIES</button></div>
+		<div class="button-container" ng-show="ctrl.type==='public'"><button ui-sref="favPlace">FAVOURITE PLACES</button></div>
+		<div class="button-container" ng-show="ctrl.type==='public'"><button ui-sref="favStory">FAVOURITE STORIES</button></div>
+		<div class="button-container"><button ui-sref="editDetail">PERSONAL DETAILS</button></div>
+	</div>
+</div>

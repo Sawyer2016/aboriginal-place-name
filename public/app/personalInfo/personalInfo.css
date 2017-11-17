@@ -1,0 +1,54 @@
+.personalInfo{
+	width:100%;
+	height:50vh;
+	float:left; 
+}
+.personalInfo .left-part{
+	width:75%;
+	float:left;
+	padding-left: 3%;
+}
+.personalInfo .left-part .navigation{
+	width:100%;
+	float:left;
+}
+.personalInfo .left-part .navigation a{
+	text-decoration: none;
+	color:#DD6D26;
+	font-size: 80%;
+}
+.personalInfo .left-part .detail-container{
+	width:100%;
+	margin-top: 5%;
+}
+.personalInfo .left-part .detail-container .title{
+	font-size: 150%;
+	font-weight:bold;
+}
+.personalInfo .left-part .detail-container .detail{
+	width:100%;
+	margin-top: 5%;
+	float:left;
+}
+.personalInfo .right-part{
+	width:20%;
+	float:right;
+}
+.personalInfo .right-part .button-container{
+	width:100%;
+	margin-bottom: 2%;
+	float:right;
+}
+.personalInfo .right-part .button-container p{
+	float:right;
+	padding-right: 25%;
+	color:#DD6D26; 
+}
+.personalInfo .right-part button{
+	background:#F4DA9D;
+	border:3px solid #DD6D26 ;
+	font-weight:bold;
+	float:right;
+	width:80%;
+	cursor: pointer;
+}

@@ -1,0 +1,85 @@
+<div class="places">
+<div class="filterbox">
+  <div class="filter">
+    <div class="filterContent">
+      <div class="input-search">
+        <input autocomplete="off" list="suggestionList" ng-model-options='{ debounce: 300 }' ng-change="ctrl.changeDataList()" type="text" ng-model="ctrl.placeToSearch" ng-keyup="ctrl.mykey($event)"/>
+        <datalist id="suggestionList">
+          <option data-ng-repeat="x in ctrl.suggestionlist" value="{{x.trad_aboriginal_name}}">
+        </datalist>
+        <a href="#" ng-click="ctrl.searchPlaceByName()">
+        <div  class="search-map"></div></a>
+      </div>
+      <div class="condition">
+      <div class="condition-content">Municipality</div>
+      <div class="condition-content">
+      <select ng-model="ctrl.municipality" ng-change="ctrl.filterPlaces()">
+        <option value="All" >All</option>
+        <option ng-repeat="x in ctrl.municipalities" value="{{x}}">{{x}}</option>
+      </select>
+      </div>
+      </div>
+      <div class="condition">
+      <div class="condition-content">Starts With</div>
+      <div class="condition-content">
+        <select ng-model="ctrl.startsWith"   ng-change="ctrl.filterPlaces()" >
+          <option value="All" >All</option>
+          <option ng-repeat="x in ctrl.alphabets" value="{{x}}">{{x}}</option>
+        </select>
+      </div>
+      </div>
+      <div class="condition">
+      <div class="condition-content">Language</div>
+      <div class="condition-content">
+        <select  ng-model="ctrl.languages"  ng-change="ctrl.filterPlaces()"   >
+          <option value="All" >All</option>
+          <option  ng-repeat=" x in ctrl.langs" value="{{x.id}}" >{{x.lang}} </option>
+        </select>
+      </div>
+      </div>
+      <div class="textcss">
+        <p ng-repeat="x in ctrl.places track by $index" >
+        <a class="place-css" href="#">{{x.trad_aboriginal_name}}</a></p>
+
+      </div>
+      <button class="reset" ng-click="ctrl.Reset()">Reset</button>
+    </div>
+  </div>
+</div>
+<div class="placesList" >
+  <div class="placeInfo" ng-repeat="x in ctrl.items">
+    <div class="place-words">
+      <div class="place-name"><a ui-sref="place({ id: x.id })">{{x.trad_aboriginal_name}}</a></div>
+      <div class="place-HistoricalName">Historical Name -{{x.present_day_place.name}}</div>
+      <div class="place-text">{{x.present_day_place.history}}</div>
+      <div class="read-more">
+      <a ui-sref="place({ id: x.id })">Read More</a>
+      </div>
+    </div>
+    <div class="place-img" >
+        <img class="" ng-src='http://18.220.85.229/api/Assets/{{x.assets["0"].id}}/rawAsset' />
+    </div>
+  </div>
+</div>
+
+<div class="pages">
+  <ul ng-if="ctrl.pager.pages.length" class="pagination">
+      <li ng-class="{disabled:ctrl.pager.currentPage === 1}">
+          <a  ng-click="ctrl.setPage(1)"><<</a>
+      </li>
+      <li ng-class="{disabled:ctrl.pager.currentPage === 1}">
+          <a ng-click="ctrl.setPage(ctrl.pager.currentPage - 1)"><</a>
+      </li>
+      <li ng-repeat="page in ctrl.pager.pages" ng-class="{active:ctrl.pager.currentPage === page}">
+          <a id="{{page}}"   ng-click="ctrl.setPage(page)" >{{page}}</a>
+      </li>
+      <li ng-class="{disabled:ctrl.pager.currentPage === ctrl.pager.totalPages}">
+          <a  ng-click="ctrl.setPage(ctrl.pager.currentPage + 1)">></a>
+      </li>
+      <li ng-class="{disabled:ctrl.pager.currentPage === ctrl.pager.totalPages}">
+          <a  ng-click="ctrl.setPage(ctrl.pager.totalPages)">>></a>
+      </li>
+  </ul>
+</div>
+
+</div>

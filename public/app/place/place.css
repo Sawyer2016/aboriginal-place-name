@@ -1,0 +1,124 @@
+.place{
+	width:100%;
+	float:left;
+}
+.place .place-info{
+	width:100%;
+	float:left;
+	word-wrap:break-word;
+}
+
+.place .place-info .theme{
+	color:#DD6D26;
+	font:bold;
+	font-size: 200%;
+	float:left;
+	width:100%;
+	margin-bottom: 2%;
+}
+
+.place .place-info .theme button{
+	background:#F4DA9D;
+	border:3px solid #DD6D26 ;
+	font-weight:bold;
+	float:right;
+	width:10%;
+	cursor: pointer;
+}
+.place .place-info .theme img{
+	float:right;
+	width:5%;
+	height:5%;
+}
+
+.place .place-info .meaningLang{
+	margin-bottom: 2%;
+	float:left;
+	width:100%;
+}
+
+.place .place-info .meaningLang .audioCss{
+	width:100%;
+	float:left;
+}
+
+.place .place-info .detail{
+	width:100%;
+	margin-bottom: 2%;
+	float:left;
+}
+
+
+.owl-carousel .images{
+	width: 40%;
+	padding-left: 30%;	
+}
+
+.owl-carousel .videos video{
+	width:40%;
+	padding-left: 30%;
+}
+/*.owl-carousel iframe{
+	width: 30%;
+    height:100%;
+}*/
+
+
+.place .place-info .history{
+	width:100%;
+	float:left;
+}
+.place .stories-container{
+	float:left;
+	width:100%;
+ 	
+}
+
+.place .share-buttons{
+	float:left;
+	width:100%;	
+}
+.place .share-buttons .facebook{
+	 height:5%;
+	  width:5%;
+	  float:right;
+}
+.place .share-buttons .twitter{
+	 height:5%;
+	  width:5%;
+	  float:right;
+}
+
+
+.place .stories-container .theme{
+	color:#DD6D26;
+	font:bold;
+	font-size: 200%;
+	float:left;
+	width:100%;
+	margin-bottom: 2%;
+
+}
+.place .stories-container .story-box{
+	width:20%;
+	margin-right: 5%;
+	float:left;
+}
+.place .stories-container .story-box .story-title{
+	text-align: center;
+	width:100%;
+	color:#DD6D26;
+}
+.place .stories-container .story-box .story-intro{
+	width:100%;
+}
+.place .stories-container .story-box .story-readmore{
+	width:100%;
+	
+	
+}
+.place .stories-container .story-box .story-readmore a{
+	color:#DD6D26;
+	text-decoration:none;
+	float:right;
+}

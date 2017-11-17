@@ -1,0 +1,117 @@
+.signUp{
+	width:100%;
+	float:left; 
+/*	border:3px solid #DD6D26 ;*/
+}
+.signUp .header{
+	width:100%;
+	float:left;
+	margin-bottom: 10%;
+}
+.signUp .header img{
+	width:60%;
+}
+
+.buttons button {
+
+	background:#F4DA9D;
+	border:3px solid #DD6D26 ;
+	font-weight:bold;
+	float:left;
+	margin-right: 5%;
+	cursor:pointer;
+}
+
+ .UserInfo table{
+  border:none;
+  border-collapse: collapse;
+  width:30%;
+}
+ .UserInfo table tr{
+ 	height:40px;
+ }
+ .UserInfo table td {
+	border:none;
+	width:20%;
+}
+
+.UserInfo input {
+	float: left;
+}
+.UserInfo .condition{
+	width:100%;
+	float: left;
+	margin-bottom: 2%;
+}
+
+.signUp.footer {
+  text-align: right;
+  width: 80%;
+  height: 25%;
+  background: #EBBD26;
+  margin-top: 20%;
+  margin-left: 10%;
+  float:left;
+}
+.signUp .footer .first-line{
+  width:100%;
+}
+.signUp .footer .footer-title {
+  font-weight: bold;
+  padding-right: 1%;
+  padding-top:1%;
+}
+
+.signUp .footer-copyright {
+  float:left;
+  width: 100%;
+  height: 2%;
+  text-align: center;
+}
+
+.signUp .footer-copyright {
+  float:left;
+  width: 100%;
+  height: 2%;
+  text-align: center;
+}
+
+.signUp .footer .first-line .facebook{
+  height:3%;
+  width:3%;
+  float:left;
+}
+.signUp .footer .first-line .twitter{
+  height:5%;
+  width:5%;
+  float:left;
+}
+.signUp .footer .first-line .android{
+  height:3.5%;
+  width:3.5%;
+  float:left;
+}
+.signUp .footer .first-line .ios{
+  height:6%;
+  width:6%;
+  float:left;
+}
+.signUp .footer .first-line .instagram{
+  height:4%;
+  width:4%;
+  float:left;
+}
+.signUp .footer .first-line .soundCloud{
+  height:5%;
+  width:5%;
+  float:left;
+}
+.signUp .footer .first-line .vimeo{
+  height:4%;
+  width:4%;
+  float:left;
+}
+.signUp .footer .text{
+  padding-right: 1%;
+  margin-bottom: 1%;
+}

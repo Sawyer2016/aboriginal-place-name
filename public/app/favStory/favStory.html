@@ -1,0 +1,25 @@
+<div class="favStory">
+	<div class="top-part">
+		<div class="navigation">
+			<a ui-sref="personalInfo">My Account/</a>
+			<a ui-sref="favStory">Favourite Story/</a>
+		</div>
+	</div>
+	<div class="storyInfo">
+		<table>
+			<tr class="title">
+				<td></td>
+				<td>Story Title</td>
+				<td>Aboriginal Place</td>
+				<td>Present Day Place</td>
+			</tr>
+			<tr ng-repeat="x in ctrl.favStories">
+				<td><input type="checkbox" ng-checked="ctrl.selectedList.indexOf(x.id)>-1" value={{x.id}} ng-click="ctrl.toggleSelection(x.id)"></td>
+				<td><a ui-sref="story({ id:x.id })">{{x.title}}</a></td>
+				<td>{{x.aboriginal_place.trad_aboriginal_name}}</td>
+				<td>{{x.aboriginal_place.present_day_place.name}}</td>
+			</tr>
+		</table>
+	</div>
+	<button ng-click="ctrl.remove()">Remove Checked Stories</button>
+</div>

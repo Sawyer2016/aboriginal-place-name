@@ -1,0 +1,8 @@
+To serve locally:
+
+  1. Run 'npm start'
+  2. Browse to localhost:3474
+
+To run tests:
+
+  1. Run 'npm test'

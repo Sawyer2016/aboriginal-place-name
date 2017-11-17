@@ -1,0 +1,63 @@
+<div class="introduction" ng-if="ctrl.state === 'contact'">If you have got any information related to a place, want to register as a contributor, or need general help, please fill in the form below and we shall get back to you shortly.</div>
+
+<form ng-submit="ctrl.submit()">
+	<div class="form" ng-if="ctrl.state === 'contact'">
+		<table>
+			<tr>
+				<td>Name*</td>
+				<td><input type="text" style="width: 300px" ng-model="ctrl.user.name"></td>
+			</tr>
+			<tr>
+				<td>Telephone</td>
+				<td><input type="tel" style="width: 300px" ng-model="ctrl.user.telephone"></td>		
+			</tr>
+			<tr>
+				<td>Placename</td>
+				<td><input type="text" style="width: 300px" ng-model="ctrl.user.placename"></td>
+			</tr>
+			<tr>
+				<td>Email*</td>
+				<td><input  type="email" style="width: 300px" ng-model="ctrl.user.email"></td>
+			</tr>
+			<tr>
+				<td>Subject*</td>
+				<td><input type="text" style="width: 300px" ng-model="ctrl.user.subject"></td>
+			</tr>
+			<div class="checkboxs">
+				<tr>
+					<td>Topic*</td>
+					<td>
+						<div ng-repeat="topic in ctrl.topics">
+							<input type="radio" ng-model="ctrl.user.topic"
+							ng-value="topic" ng-checked="ctrl.user.topic === topic">
+							{{topic}}
+						</div>
+					</td>
+				</tr>
+
+			</div>
+			<tr>
+				<td>Message*</td>
+				<td><input type="text" style="width: 700px;height: 200px" ng-model="ctrl.user.message"></td>		
+			</tr>
+			<tr>
+				<td>Upload File</td>
+				<td><input class="uploadFile" type="file" ></td>
+			</tr>
+		</table>
+	</div>
+	<div class="buttons" ng-if="ctrl.state === 'contact'">
+		<button ng-disabled="!ctrl.canSubmit()" type="submit">Submit</button>
+		<button type="reset">Reset</button>
+	</div>
+</form>
+<div ng-if="ctrl.state === 'sending'" style="text-align: center;">
+	<p>Sending message, please wait...</p>
+</div>
+<div ng-if="ctrl.state === 'success'" style="text-align: center;">
+	<p>Your message was sent!</p>
+</div>
+<div ng-if="ctrl.state === 'error'" style="text-align: center;">
+	<p>Oops, something went wrong.</p>
+	<p>Click <a href ng-click="ctrl.reset()">here</a> to try again.</p>
+</div>

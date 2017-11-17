@@ -1,0 +1,25 @@
+<div class="favPlace">
+	<div class="top-part">
+		<div class="navigation">
+			<a ui-sref="personalInfo">My Account/</a>
+			<a ui-sref="favPlace">Favourite Places/</a>
+		</div>
+	</div>
+	<div class="placeInfo">
+		<table>
+			<tr class="title">
+				<td></td>
+				<td>Aboriginal Name</td>
+				<td>Present Name</td>
+				<td>Municipality/Suburb</td>
+			</tr>
+			<tr ng-repeat="x in ctrl.favPlaces">
+				<td><input type="checkbox" ng-checked="ctrl.selectedList.indexOf(x.id)>-1" value={{x.id}} ng-click="ctrl.toggleSelection(x.id)"></td>
+				<td><a ui-sref="place({ id: x.id })">{{x.trad_aboriginal_name}}</a></td>
+				<td>{{x.present_day_place.name}}</td>
+				<td>{{x.municipality}}</td>
+			</tr>
+		</table>
+	</div>
+	<button ng-click="ctrl.remove()">Remove Checked Places</button>
+</div>

@@ -1,0 +1,79 @@
+
+ <div class="place">
+   <div class="place-info">
+    <div class="theme">
+      {{ctrl.place.trad_aboriginal_name}}
+      <img  ng-show="ctrl.ifFav===false" ng-click="ctrl.setFav()" src="../../images/star1.png">
+      <img  ng-show="ctrl.ifFav===true" ng-click="ctrl.setFav()" src="../../images/star2.png">
+      <button ng-show="ctrl.user.type==='admin'"  ui-sref="editPlace({ id: ctrl.place.id })">EDIT</button>
+    </div>
+    <div class="meaningLang" >
+      <div class="meaning">
+        Meaning of the Name - {{ctrl.place.meaning}}
+      </div>
+      <div class="language">
+        Language of Origin - {{ctrl.place.lang.lang}}
+      </div>
+    </div>
+    <div class="detail">
+     {{ctrl.place.information}}
+    </div>
+     <div>
+     <data-owl-carousel class="owl-carousel" data-options="{items:1, pagination: true, rewindNav : false}">
+        <div class="images" owl-carousel-item="" ng-repeat="item in ctrl.imgURL track by $index">
+          <!-- <iframe frameborder=0 ng-src="{{item.url}}"></iframe> -->
+          <img ng-src="{{item}}" alt="">
+        </div>
+      </data-owl-carousel>
+    </div>
+    <div>
+     <data-owl-carousel class="owl-carousel" data-options="{items:1, pagination: true, rewindNav : false}">
+        <div class="videos" owl-carousel-item="" ng-repeat="item in ctrl.videoURL track by $index">
+          <video ng-src="{{item}}" controls="controls"></video>
+        </div>
+      </data-owl-carousel>
+    </div>
+    <div ng-if="ctrl.placeAudioURL">
+    <div class="theme">
+    Audio
+    </div>
+    <div class="audioCss">
+        <audio  ng-src={{ctrl.placeAudioURL}} controls="controls">
+    </div>
+    </div>
+    <div ng-if="ctrl.place.history">
+    <div class="theme">
+    History of the place name
+    </div>
+    <div class="history">{{ctrl.place.history}}</div>
+    </div>
+    <div ng-if="ctrl.place.community">
+    <div class="theme">
+    Community Links
+    </div>
+    <div class="history">{{ctrl.place.community}}</div> 
+    </div>
+
+  </div>
+
+   <div class="stories-container" ng-if="ctrl.place.stories.length">
+    <div class="theme">Stories</div>
+    <div class="story-box" ng-repeat="story in ctrl.place.stories">
+      <div class="story-title">
+        {{story.title}}
+      </div>
+      <div class="story-intro">
+      {{story.text|limitTo:15 }}{{story.text.length>15?"...":""}}
+      </div>
+      <div class="story-readmore">
+        <a ui-sref="story({ id: story.id })">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="share-buttons">
+
+     <a href="" ng-click="ctrl.shareToFacebook()"><img class="facebook" src="../../images/facebook2.png"></a>
+    <a href="" ng-click="ctrl.shareToTwitter()"><img class="twitter" src="../../images/twitter2.png"></a>
+  </div>
+ </div>
